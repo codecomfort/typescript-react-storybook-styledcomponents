@@ -1,0 +1,31 @@
+{
+  "name": "typescript-styled-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@storybook/react": "^4.0.0-alpha.21",
+    "@types/jest": "^23.3.2",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.7",
+    "@types/storybook__react": "^3.0.9",
+    "@types/styled-components": "^3.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.2",
+    "jest": "^23.6.0",
+    "typescript": "^3.0.3",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "styled-components": "^3.4.8"
+  }
+}

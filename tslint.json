@@ -1,0 +1,12 @@
+{
+  "extends": ["tslint:recommended"],
+  "rules": {
+    // prettier が自動でメソッド末尾に付加するのを制御できないので、こちら側で無視しておく
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "trailing-comma": true,
+    "object-literal-shorthand": false,
+    //  .stories.tsx にて、react の import 文が検知されるのを抑止
+    // ここで設定すると他所でも出なくなるが、storybook でそこまで厳密にチェックは不要と判断
+    "no-unused-variable": false,
+  }
+}
