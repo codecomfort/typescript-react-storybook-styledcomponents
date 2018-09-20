@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Counter, Thing, Thing2, Thing3 } from "./index";
+import { Counter, Thing, Thing2, Thing3, GlobalStyle, Thing4 } from "./index";
 import { storiesOf } from "@storybook/react";
 
 storiesOf("StyledComponents/Basics/ComingFromCss/Counter", module).add(
@@ -51,5 +51,14 @@ storiesOf("StyledComponents/Basics/ComingFromCss/Thing3", module).add(
         </div>
       </div>
     </Thing3>
+  )
+);
+storiesOf("StyledComponents/Basics/ComingFromCss/Thing4", module).add(
+  "default",
+  () => (
+    <React.Fragment>
+      <GlobalStyle />
+      <Thing4>I'm blue, da ba dee da ba daa</Thing4>
+    </React.Fragment>
   )
 );

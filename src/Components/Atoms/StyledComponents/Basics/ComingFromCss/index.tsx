@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "../../../styled-components";
+import { createGlobalStyle, css } from "../../../styled-components";
 
 // Define Styled Components outside of ther render method
 export const StyledCounter = styled.div`
@@ -83,7 +84,7 @@ export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
 
   // className に .something-else を持つ要素の、子孫の <Thing2> へ適用
   .something-else & {
-    border: 1px solid;  // <Thing2> inside another element labeled ".something-else"
+    border: 1px solid; // <Thing2> inside another element labeled ".something-else"
   }
 `;
 
@@ -92,7 +93,23 @@ export const Thing3 = styled.div`
 
   // & なしのセレクタは、子孫要素を参照する
   .something {
-    border: 1px solid;  // an element labeled ".something" inside <Thing3>
+    border: 1px solid; // an element labeled ".something" inside <Thing3>
     display: block;
+  }
+`;
+
+// && で指定すると、特殊扱いで GlobalStyle の影響を受けない
+export const Thing4 = styled.div`
+  && {
+    color: blue;
+  }
+`;
+
+// v4 から導入の API
+// https://www.styled-components.com/docs/api#helpers
+// Styled Compnents のローカルスコープ無し版
+export const GlobalStyle = createGlobalStyle`
+  div${Thing4} {
+    color: red;
   }
 `;
