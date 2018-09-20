@@ -58,4 +58,14 @@ export const Thing = styled.button`
 
 export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
   color: blue;
+
+  // & でメインコンポーネントを参照できる
+  &:hover {
+    color: red; // <Thing2> when hovered
+  }
+
+  // E ~ F は、E 要素の後ろにあり、且つ、同じ階層である F 要素に、スタイルを適用する
+  & ~ & {
+    background: tomato; // <Thing2> as a sibling of <Thing2>
+  }
 `;
