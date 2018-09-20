@@ -80,4 +80,9 @@ export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
   &.something {
     background: orange; // <Thing> tagged with an additional CSS class ".something"
   }
+
+  // className に .something-else を持つ要素の、子孫の <Thing2> へ適用
+  .something-else & {
+    border: 1px solid;  // <Thing> inside another element labeled ".something-else"
+  }
 `;

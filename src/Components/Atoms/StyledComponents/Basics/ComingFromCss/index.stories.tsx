@@ -4,15 +4,11 @@ import { storiesOf } from "@storybook/react";
 
 storiesOf("StyledComponents/Basics/ComingFromCss/Counter", module).add(
   "default",
-  () => (
-    <Counter />
-  )
+  () => <Counter />
 );
 storiesOf("StyledComponents/Basics/ComingFromCss/Thing", module).add(
   "default",
-  () => (
-    <Thing>Hello world!</Thing>
-  )
+  () => <Thing>Hello world!</Thing>
 );
 storiesOf("StyledComponents/Basics/ComingFromCss/Thing2", module).add(
   "default",
@@ -24,7 +20,9 @@ storiesOf("StyledComponents/Basics/ComingFromCss/Thing2", module).add(
       <div>Pretty nice day today.</div>
       <Thing2>Don't you think?</Thing2>
       <div className="something-else">
-        <Thing2>Splendid.</Thing2>
+        <div>
+          <Thing2>Splendid.</Thing2>
+        </div>
       </div>
     </React.Fragment>
   )
