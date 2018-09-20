@@ -65,7 +65,14 @@ export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
   }
 
   // E ~ F は、E 要素の後ろにあり、且つ、同じ階層である F 要素に、スタイルを適用する
+  // → stories の 2, 3, 4 個目の <Thing2> に適用
   & ~ & {
     background: tomato; // <Thing2> as a sibling of <Thing2>
+  }
+
+  // E + F は、E 要素と F 要素が隣接している F 要素に、スタイルを適用する
+  // → stories の 2, 3 個目の <Thing2> に適用
+  & + & {
+    background: lime // <Thing2> next to <Thing2>
   }
 `;
