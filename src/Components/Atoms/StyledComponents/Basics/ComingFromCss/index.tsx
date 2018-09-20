@@ -41,3 +41,21 @@ export class Counter extends React.Component<{}, { count: number }> {
     );
   }
 }
+
+export const Thing = styled.button`
+  color: blue;
+
+  // Pseudo-elements
+  ::before {
+    content: "🚀";
+  }
+
+  // Pseudo-class
+  :hover {
+    color: red;
+  }
+`;
+
+export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
+  color: blue;
+`;
