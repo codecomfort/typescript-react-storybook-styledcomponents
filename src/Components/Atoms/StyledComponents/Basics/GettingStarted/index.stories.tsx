@@ -2,7 +2,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { Title, Wrapper } from "./index";
 
-storiesOf("Atoms/StyledComponents/Basics/GettingStarted", module).add(
+storiesOf("StyledComponents/Basics/GettingStarted", module).add(
   "default",
   () => (
     <Wrapper>
