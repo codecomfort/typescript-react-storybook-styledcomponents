@@ -78,11 +78,21 @@ export const Thing2 = styled.div.attrs({ tabIndex: 0 })`
 
   // className に something を持つ <Thing2> へ適用
   &.something {
-    background: orange; // <Thing> tagged with an additional CSS class ".something"
+    background: orange; // <Thing2> tagged with an additional CSS class ".something"
   }
 
   // className に .something-else を持つ要素の、子孫の <Thing2> へ適用
   .something-else & {
-    border: 1px solid;  // <Thing> inside another element labeled ".something-else"
+    border: 1px solid;  // <Thing2> inside another element labeled ".something-else"
+  }
+`;
+
+export const Thing3 = styled.div`
+  color: blue;
+
+  // & なしのセレクタは、子孫要素を参照する
+  .something {
+    border: 1px solid;  // an element labeled ".something" inside <Thing3>
+    display: block;
   }
 `;

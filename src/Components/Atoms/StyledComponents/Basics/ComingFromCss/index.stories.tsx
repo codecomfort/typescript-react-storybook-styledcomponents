@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Counter, Thing, Thing2 } from "./index";
+import { Counter, Thing, Thing2, Thing3 } from "./index";
 import { storiesOf } from "@storybook/react";
 
 storiesOf("StyledComponents/Basics/ComingFromCss/Counter", module).add(
@@ -25,5 +25,31 @@ storiesOf("StyledComponents/Basics/ComingFromCss/Thing2", module).add(
         </div>
       </div>
     </React.Fragment>
+  )
+);
+storiesOf("StyledComponents/Basics/ComingFromCss/Thing3", module).add(
+  "default",
+  () => (
+    // ※ React では、label の for は htmlFor で表現するので
+    // reactjs - React label element - Stack Overflow
+    // https://stackoverflow.com/questions/22752116/react-label-element
+    <Thing3>
+      <label htmlFor="foo-button" className="something">
+        Mystery button
+      </label>
+      <button id="foo-button">What do I do?</button>
+      <div>
+        <label htmlFor="foo-button" className="something">
+          Mystery button
+        </label>
+        <button id="foo-button">What do I do?</button>
+        <div>
+          <label htmlFor="foo-button" className="something">
+            Mystery button
+          </label>
+          <button id="foo-button">What do I do?</button>
+        </div>
+      </div>
+    </Thing3>
   )
 );
