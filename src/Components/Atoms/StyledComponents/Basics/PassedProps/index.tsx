@@ -18,8 +18,10 @@ import styled from "../../../styled-components";
 // `;
 
 // 解説 1. の例
-// ターゲットがシンプル要素である Styled コンポーネントでは、known HTML attribue が DOM へパススルーされる
-// (stories 側で placeholder, value, type を渡し、それが本コンポーネントを経由して input 要素に適用されている)
+// ターゲットがシンプル要素である Styled コンポーネントでは、known HTML attribute が DOM へパススルーされる
+// (stories 側で渡している placeholder, value, type は known HTML attribute なので、
+//  本コンポーネントを経由して input 要素に適用されている
+//  一方、inputColor は known HTML attribue ではないので、input 要素へは適用されない)
 export const Input = styled<{ inputColor?: string }, "input">("input")`
   padding: 0.5em;
   margin: 0.5em;
