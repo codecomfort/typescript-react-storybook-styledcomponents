@@ -4,6 +4,10 @@ import styled from "../../../styled-components";
 // Typescript を使ってる場合、シンプル要素(＝div や input など)に対し、
 // known HTML attribute 以外の属性は、定義なしに使用できない
 // サンプルのような、以下の書き方はエラーになる
+// TS の書き方は以下を参照
+// styled-components: API Reference - TypeScript - Styling components
+// https://www.styled-components.com/docs/api#typescript
+
 // export const Input = styled.input`
 //   padding: 0.5em;
 //   margin: 0.5em;
