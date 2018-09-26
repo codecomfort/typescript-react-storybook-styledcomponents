@@ -1,7 +1,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { Button, ButtonWithDefault, Button2 } from "./index";
-import { ThemeProvider } from "../../../styled-components";
+import { Button, ButtonWithDefault, Button2, MyComponent, IMyComponentProps } from "./index";
+import { ThemeProvider, withTheme } from "../../../styled-components";
 import { ITheme } from "../../../theme";
 
 const theme = {
@@ -18,7 +18,7 @@ storiesOf("StyledComponents/Advanced/Theming/Button", module).add(
       <br />
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          {/* ThemeProvider の効果で、styled-component であれば
+          {/* ThemeProvider の効果で、styled-components であれば
               theme には Context 経由でアクセスできるので、いちいち指定しなくてよい */}
           <Button>Themed</Button>
           <ButtonWithDefault>ThemedWithDefault</ButtonWithDefault>
@@ -50,5 +50,23 @@ storiesOf("StyledComponents/Advanced/Theming/FunctionThmemes", module).add(
         </ThemeProvider>
       </div>
     </ThemeProvider>
+  )
+);
+
+export const MyComponentWithTheme = withTheme(MyComponent);
+
+storiesOf("StyledComponents/Advanced/Theming/ComponentWithTheme", module).add(
+  "default",
+  () => (
+    <div>
+      <ThemeProvider theme={theme2}>
+        <React.Fragment>
+          <MyComponent />
+          <br />
+          {/* stylec-components でなくても、withTheme でラップすれば、ThemeProvider の theme にアクセスできる */}
+          <MyComponentWithTheme />
+        </React.Fragment>
+      </ThemeProvider>
+    </div>
   )
 );

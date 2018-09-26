@@ -8,8 +8,9 @@ const {
   createGlobalStyle,
   injectGlobal,
   keyframes,
-  ThemeProvider
+  ThemeProvider,
+  withTheme
 } = styledComponents as ThemedStyledComponentsModule<ITheme>;
 
-export { css, createGlobalStyle, injectGlobal, keyframes, ThemeProvider };
+export { css, createGlobalStyle, injectGlobal, keyframes, ThemeProvider, withTheme };
 export default styled;

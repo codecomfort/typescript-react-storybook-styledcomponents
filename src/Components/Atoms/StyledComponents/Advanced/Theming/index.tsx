@@ -48,3 +48,12 @@ export const Button2 = styled<IButton2Props, "button">("button")`
   padding: 0.25em 1em;
   border-radius: 3px;
 `;
+export interface IMyComponentProps {
+  theme?: ITheme;
+}
+
+export const MyComponent: React.SFC<IMyComponentProps> = (props) => {
+  const theme = JSON.stringify(props.theme);
+  console.log(`Current theme: ${theme}`);
+  return <a>{`My theme is ${theme}`}</a>;
+};
