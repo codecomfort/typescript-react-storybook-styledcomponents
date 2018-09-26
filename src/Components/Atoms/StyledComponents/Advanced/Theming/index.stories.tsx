@@ -1,6 +1,12 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { Button, ButtonWithDefault, Button2, MyComponent, IMyComponentProps } from "./index";
+import {
+  Button,
+  ButtonWithDefault,
+  Button2,
+  MyComponent,
+  IMyComponentProps
+} from "./index";
 import { ThemeProvider, withTheme } from "../../../styled-components";
 import { ITheme } from "../../../theme";
 
@@ -8,7 +14,7 @@ const theme = {
   primaryColor: "mediumseagreen"
 };
 
-storiesOf("StyledComponents/Advanced/Theming/Button", module).add(
+storiesOf("StyledComponents/Advanced/Theming/ThemeProvider", module).add(
   "default",
   () => (
     <div>
@@ -33,9 +39,12 @@ const theme2: ITheme = {
   secondaryColor: "white"
 };
 
-const invertTheme = (theme: ITheme): ITheme => ({ primaryColor: theme.secondaryColor, secondaryColor: theme.primaryColor });
+const invertTheme = (theme: ITheme): ITheme => ({
+  primaryColor: theme.secondaryColor,
+  secondaryColor: theme.primaryColor
+});
 
-storiesOf("StyledComponents/Advanced/Theming/FunctionThmemes", module).add(
+storiesOf("StyledComponents/Advanced/Theming/FunctionThemes", module).add(
   "default",
   () => (
     <ThemeProvider theme={theme2}>
@@ -55,18 +64,18 @@ storiesOf("StyledComponents/Advanced/Theming/FunctionThmemes", module).add(
 
 export const MyComponentWithTheme = withTheme(MyComponent);
 
-storiesOf("StyledComponents/Advanced/Theming/ComponentWithTheme", module).add(
-  "default",
-  () => (
-    <div>
-      <ThemeProvider theme={theme2}>
-        <React.Fragment>
-          <MyComponent />
-          <br />
-          {/* stylec-components でなくても、withTheme でラップすれば、ThemeProvider の theme にアクセスできる */}
-          <MyComponentWithTheme />
-        </React.Fragment>
-      </ThemeProvider>
-    </div>
-  )
-);
+storiesOf(
+  "StyledComponents/Advanced/Theming/GettingTheThemeWithoutStyledComponents",
+  module
+).add("default", () => (
+  <div>
+    <ThemeProvider theme={theme2}>
+      <React.Fragment>
+        <MyComponent />
+        <br />
+        {/* stylec-components でなくても、withTheme でラップすれば、ThemeProvider の theme にアクセスできる */}
+        <MyComponentWithTheme />
+      </React.Fragment>
+    </ThemeProvider>
+  </div>
+));
