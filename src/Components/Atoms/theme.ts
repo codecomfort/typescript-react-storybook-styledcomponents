@@ -1,6 +1,6 @@
 export interface ITheme {
-  primaryColor: string;
-  secondaryColor: string;
+  primaryColor?: string;
+  secondaryColor?: string;
 }
 
 export const theme: ITheme = {
