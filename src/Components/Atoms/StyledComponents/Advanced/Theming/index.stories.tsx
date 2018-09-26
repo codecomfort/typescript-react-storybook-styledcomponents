@@ -1,7 +1,8 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { Button, ButtonWithDefault, Button2 } from "./index";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "../../../styled-components";
+import { ITheme } from "../../../theme";
 
 const theme = {
   primaryColor: "mediumseagreen"
@@ -17,7 +18,8 @@ storiesOf("StyledComponents/Advanced/Theming/Button", module).add(
       <br />
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          {/* ThemeProvider の効果で theme には Context 経由でアクセスできるので、いちいち指定しなくてよい */}
+          {/* ThemeProvider の効果で、styled-component であれば
+              theme には Context 経由でアクセスできるので、いちいち指定しなくてよい */}
           <Button>Themed</Button>
           <ButtonWithDefault>ThemedWithDefault</ButtonWithDefault>
         </React.Fragment>
@@ -26,19 +28,12 @@ storiesOf("StyledComponents/Advanced/Theming/Button", module).add(
   )
 );
 
-const theme2 = {
-  fg: "palevioletred",
-  bg: "white"
+const theme2: ITheme = {
+  primaryColor: "palevioletred",
+  secondaryColor: "white"
 };
-// const invertTheme = ({ fg }: { fg: string }, { bg }: { bg: string }) => ({
-//   fg: bg,
-//   bg: fg
-// });
-type Args = {
-  fg: string;
-  bg: string;
-};
-const invertTheme = (args: Args) => ({ fg: args.bg, bg: args.fg });
+
+const invertTheme = (theme: ITheme): ITheme => ({ primaryColor: theme.secondaryColor, secondaryColor: theme.primaryColor });
 
 storiesOf("StyledComponents/Advanced/Theming/FunctionThmemes", module).add(
   "default",

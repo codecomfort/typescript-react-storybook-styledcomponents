@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "../../../styled-components";
+import { ITheme } from "../../../theme";
 
 export interface IButtonProps {
   theme?: {
@@ -34,16 +35,13 @@ ButtonWithDefault.defaultProps = {
 };
 
 export interface IButton2Props {
-  theme?: {
-    fg: string;
-    bg: string;
-  };
+  theme?: ITheme;
 }
 
 export const Button2 = styled<IButton2Props, "button">("button")`
-  color: ${(props) => props.theme.fg};
-  border: 2px solid ${(props) => props.theme.fg};
-  background: ${(props) => props.theme.bg};
+  color: ${(props) => props.theme.primaryColor};
+  border: 2px solid ${(props) => props.theme.primaryColor};
+  background: ${(props) => props.theme.secondaryColor};
 
   font-size: 1em;
   margin: 1em;

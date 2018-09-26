@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "../../../styled-components";
-import { keyframes } from "styled-components";
+import { keyframes } from "../../../styled-components";
 
 const rotate360 = keyframes`
   from {
