@@ -57,3 +57,14 @@ export const MyComponent: React.SFC<IMyComponentProps> = (props) => {
   console.log(`Current theme: ${theme}`);
   return <a>{`My theme is ${theme}`}</a>;
 };
+
+
+export const Button3 = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  
+  color: ${(props) => props.theme.primaryColor};
+  border: 2px solid ${(props) => props.theme.primaryColor}
+`;

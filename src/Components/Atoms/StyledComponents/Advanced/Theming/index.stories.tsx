@@ -5,7 +5,8 @@ import {
   ButtonWithDefault,
   Button2,
   MyComponent,
-  IMyComponentProps
+  IMyComponentProps,
+  Button3
 } from "./index";
 import { ThemeProvider, withTheme } from "../../../styled-components";
 import { ITheme } from "../../../theme";
@@ -79,3 +80,27 @@ storiesOf(
     </ThemeProvider>
   </div>
 ));
+
+const theme3: ITheme = {
+  primaryColor: "mediumseagreen",
+};
+
+storiesOf(
+  "StyledComponents/Advanced/Theming/TheThemeProp",
+  module
+).add("default", () => (
+  <div>
+    <Button3>Normal</Button3>
+    {/* theme プロパティでアドホックに操作 */}
+    <Button3 theme={{ primaryColor: "royalblue" }}>Ad hock theme</Button3>
+    <ThemeProvider theme={theme3}>
+      <div>
+        {/* ThemeProvider の theme を使用 */}
+        <Button3>Themed</Button3>
+        {/* ThemeProvider を theme を使わない */}
+        <Button theme={{ primaryColor: "darkorange"}}>Overidden</Button>
+      </div>
+    </ThemeProvider>
+  </div>
+));
+
