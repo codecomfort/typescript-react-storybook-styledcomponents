@@ -16,6 +16,8 @@ export const Icon = styled.svg`
 
   // 上位コンポーネントを参照し、その hover を検出できる
   // この動作を Link 側にネストで持つこともできるが、それは煩雑になるとのこと
+  // なお、検出できるのは対象が Styled Components の場合のみ、React.Component の場合は不可
+  // その場合は React.Component を styled() でラップして className を渡せばよいとのこと)
   ${Link}:hover & {
     fill: rebeccapurple;
   }
